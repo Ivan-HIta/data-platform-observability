@@ -38,9 +38,10 @@ pytest -q
 
 - Incremental load with deterministic event keys and idempotent reruns.
 - Explicit schema, null, duplicate, freshness and referential-integrity checks.
-- Bronze/silver/gold data contracts and a dbt model contract example.
+- Bronze/silver/gold data contracts plus dbt staging and mart models with tests.
+- Airflow DAG, Kafka event contract and deterministic replay path for batch/streaming evolution.
 - Pipeline metrics suitable for OpenTelemetry/Cloud Monitoring integration.
-- Docker, GitHub Actions and Terraform reference for a cloud object store and warehouse.
+- Docker, GitHub Actions, Kubernetes manifests and Terraform reference for cloud deployment.
 - Synthetic data only; no employer data, credentials or immigration documents belong here.
 
 ## Demo narrative
@@ -48,4 +49,3 @@ pytest -q
 “I designed a repeatable data product that can ingest operational events, stop bad data
 before it reaches analytics, publish trusted aggregates and make failures visible to the
 team responsible for the platform.”
-
