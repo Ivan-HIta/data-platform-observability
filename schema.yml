@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Synthetic event landing table used for the reproducible demo."
+    tables:
+      - name: events
+        columns:
+          - name: event_id
+            tests: [not_null, unique]
+          - name: occurred_at
+            tests: [not_null]
+
+models:
+  - name: stg_events
+    description: "Typed, non-null event staging contract."
+    columns:
+      - name: event_id
+        tests: [not_null, unique]
+      - name: service
+        tests: [not_null]
+  - name: fct_service_daily
+    description: "Daily service reliability and throughput mart."
+    columns:
+      - name: event_date
+        tests: [not_null]
+      - name: service
+        tests: [not_null]
